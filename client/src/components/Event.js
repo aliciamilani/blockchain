@@ -15,9 +15,9 @@ export const Event = props => {
           {time}
         </h3>
         <div className="media-body mb-3 mb-lg-3">
-          <MDBBadge color="danger" className="ml-2 float-right" onClick={() => onDelete(id)}>
+          {/* <MDBBadge color="danger" className="ml-2 float-right" onClick={() => onDelete(id)}>
             DELETE
-          </MDBBadge>
+          </MDBBadge> */}
           <h6 className="mt-0 font-weight-bold">
             {title}
             {' '}

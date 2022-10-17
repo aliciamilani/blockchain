@@ -36,7 +36,6 @@ function App() {
     account: "",
   });
   const [todos, setTodos] = useState([]);
-  const [inputString, setInputString] = useState("");
   const [loading, setLoading] = useState(false);
 
   const init = async () => {
@@ -49,6 +48,7 @@ function App() {
     const account = _instance.givenProvider.selectedAddress;
 
     setTodoState({ web3, instance: _instance, account });
+    
     if (_instance) {
       const _task = await _instance.methods.getTasks().call();
       setTodos(_task);
@@ -60,7 +60,6 @@ function App() {
   }, [loading]);
 
   const onAddToDo = async () => {
-    setInputString("")
     setLoading(true);
     await todoState.instance.methods
       .setTasks(convertJsonToString(data))
@@ -86,7 +85,7 @@ function App() {
   }
 
   function addEvent() {
-    const newArray = [...todos];
+    const newArray = [...events];
 
     const {title, description, time, location} = data;
 
@@ -116,7 +115,7 @@ function App() {
     setModal(!modal)
   }
 
-  const mEvents = events.map(e => (
+  const mEvents = events.map( e => (
     <Event
       key={e.id}
       id={e.id}
@@ -133,31 +132,31 @@ function App() {
   ) : (
     <>
       <MDBContainer className="mt-5">
-        <h2 className="text-uppercase my-3">Today&apos;s agenda:</h2>
+        <h2 className="text-uppercase my-3">Agenda do dia:</h2>
         <MDBRow>
           <MDBCol md="9">
             {mEvents}
             <MDBRow className="mb-4">
               <MDBCol xl="3" md="6" className="mx-auto text-center">
                 <MDBBtn color="info" onClick={toggleModal} rounded>
-                  Add Event
+                  Adicionar tarefa
                 </MDBBtn>
               </MDBCol>
             </MDBRow>
           </MDBCol>
           <MDBCol md="3">
-            <h3 className="text-uppercase my-3">Schedule</h3>
+            <h3 className="text-uppercase my-3">Cronograma</h3>
             <h6 className="my-3">
-              Its going to be busy that today. You have
+            Você tem
               {' '}
               <b>
                 {events.length}
                 {' '}
-                events
+                eventos
                 {' '}
               </b>
               {' '}
-              today.
+              hoje!
             </h6>
           </MDBCol>
         </MDBRow>
@@ -168,31 +167,31 @@ function App() {
           titleClass="w-100 font-weight-bold"
           toggle={toggleModal}
         >
-          Add new event
+          Adicionar tarefa
         </MDBModalHeader>
         <MDBModalBody>
           <form className="mx-3 grey-text">
             <MDBInput
               name="time"
-              label="Time"
+              label="Hora"
               icon="clock"
-              hint="12:30"
+              hint="HH:MM"
               group
               type="text"
               onChange={changeHandler}
             />
             <MDBInput
               name="title"
-              label="Title"
+              label="Título"
               icon="edit"
-              hint="Briefing"
+              hint="Resumo"
               group
               type="text"
               onChange={changeHandler}
             />
             <MDBInput
               name="location"
-              label="Location (optional)"
+              label="Local (Opcional)"
               icon="map"
               group
               type="text"
@@ -200,10 +199,10 @@ function App() {
             />
             <MDBInput
               name="description"
-              label="Description (optional)"
+              label="Descrição (Opcional)"
               icon="sticky-note"
               group
-              type="textarea"
+              type="text"
               onChange={changeHandler}
             />
           </form>
@@ -217,7 +216,7 @@ function App() {
               onAddToDo();
             }}
           >
-            Add
+            Cadastrar
           </MDBBtn>
         </MDBModalFooter>
       </MDBModal>
