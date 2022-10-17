@@ -33,13 +33,19 @@ export const Event = props => {
             </p>
           </>
           )}
+
+    
+          {description && (
+          <>
+            <p className="font-smaller mb-0">
+              <MDBIcon icon="align-left" />
+              {' '}
+              {description}
+            </p>
+          </>
+          )}
         </div>
       </div>
-      {description && (
-      <p className="p-2 mb-4  blue-grey lighten-5 blue-grey lighten-5">
-        {description}
-      </p>
-      )}
     </>
   );
 };

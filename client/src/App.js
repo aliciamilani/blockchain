@@ -21,7 +21,7 @@ const App = () => {
     instance: null,
     account: "",
   });
-  const [todos, setTodos] = useState(null);
+  const [todos, setTodos] = useState([]);
   const [inputString, setInputString] = useState("");
   const [loading, setLoading] = useState(false);
 

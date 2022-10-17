@@ -35,7 +35,7 @@ function App() {
     instance: null,
     account: "",
   });
-  const [todos, setTodos] = useState(null);
+  const [todos, setTodos] = useState([]);
   const [inputString, setInputString] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -159,25 +159,6 @@ function App() {
               {' '}
               today.
             </h6>
-            <h1 className="my-3">
-              <MDBRow>
-                <MDBCol xs="3" className="text-center">
-                  <MDBIcon icon="sun" fixed />
-                </MDBCol>
-                <MDBCol xs="9">Sunny</MDBCol>
-              </MDBRow>
-              <MDBRow>
-                <MDBCol xs="3" className="text-center">
-                  <MDBIcon icon="thermometer-three-quarters" fixed />
-                </MDBCol>
-                <MDBCol xs="9">23°C</MDBCol>
-              </MDBRow>
-            </h1>
-            <p>
-              Dont forget your sunglasses. Today will dry and sunny, becoming
-              warm in the afternoon with temperatures of between 20 and 25
-              degrees.
-            </p>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
