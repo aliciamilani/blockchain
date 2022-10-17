@@ -6,6 +6,14 @@ import "./App.css";
 import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
 
+function convertJsonToString (json) {
+  return JSON.stringify(json);
+}
+
+function convertStringToJson (string) {
+  return JSON.parse(string);
+}
+
 const App = () => {
 
   const [todoState, setTodoState] = useState({
@@ -56,24 +64,24 @@ const App = () => {
     <div className="App">
       
       <p className="Titulo">Current account <br></br> <b>{todoState.account}</b></p>
-      
-
+    
       <form onSubmit={(e) => onAddToDo(e)}>
         <h5>Insira sua task</h5>
         <Form.Control
           type="text"
-          onChange={(e) => setInputString(e.target.value)}
+          onChange={(e) => setInputString('{"titulo":"lavar roupa", "descricao":"agora"}')}
           value={inputString}
         />
       
       </form>
+
       <div className="Cards">
       
         <h5 className="Afazeres">Afazeres</h5>
         
           {todos?.map((todo) => (
             <Alert key={todo.id} variant="success">
-              {todo}
+              {convertStringToJson(todo).titulo}
             </Alert>
           ))}
 

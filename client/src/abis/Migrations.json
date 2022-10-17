@@ -68,7 +68,7 @@
   "sourceMap": "63:480:0:-:0;;;152:50;;;;;;;;;;187:10;179:5;;:18;;;;;;;;;;;;;;;;;;63:480;;;;;;",
   "deployedSourceMap": "63:480:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;376:165;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;111:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;87:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;269:103;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;376:165;252:5;;;;;;;;;;238:19;;:10;:19;;;234:26;;;438:19:::1;471:11;438:45;;489:8;:21;;;511:24;;489:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;::::0;::::1;;;;;;;;;;;;::::0;::::1;;;;;;;;;259:1;234:26:::0;376:165;:::o;111:36::-;;;;:::o;87:20::-;;;;;;;;;;;;:::o;269:103::-;252:5;;;;;;;;;;238:19;;:10;:19;;;234:26;;;358:9:::1;331:24;:36;;;;234:26:::0;269:103;:::o",
   "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.7.0;\ncontract Migrations {\n  address public owner;\n  uint public last_completed_migration;\n\n  constructor() public {\n    owner = msg.sender;\n  }\n\n  modifier restricted() {\n    if (msg.sender == owner) _;\n  }\n\n  function setCompleted(uint completed) public restricted {\n    last_completed_migration = completed;\n  }\n\n  function upgrade(address new_address) public restricted {\n    Migrations upgraded = Migrations(new_address);\n    upgraded.setCompleted(last_completed_migration);\n  }\n}\n",
-  "sourcePath": "C:\\Users\\milan\\Downloads\\todo-eth-blog-main\\todo-eth-blog-main\\contracts\\Migrations.sol",
+  "sourcePath": "/mnt/c/Users/jorda/Documents/oficina_2/blockchain/contracts/Migrations.sol",
   "ast": {
     "absolutePath": "project:/contracts/Migrations.sol",
     "exportedSymbols": {
@@ -1509,12 +1509,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x9770dc456424cA1DBd3f5341dCa7C30f7Dfba611",
-      "transactionHash": "0x847c31099271906a3758abe28b1eca9d4953e40d0039a1ccbf5f3c5abae3abe1"
+      "address": "0x5f81e9654D3dd5C63A70cCCbF8867B0555CBfE05",
+      "transactionHash": "0x72a46e0195bd82a533328c15558aa324dc6bd84e1780e6b92f97d3489fdec315"
     }
   },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2022-08-03T01:16:15.192Z",
+  "updatedAt": "2022-10-17T03:02:31.667Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
