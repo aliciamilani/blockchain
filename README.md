@@ -1,3 +1,9 @@
+# Oficina de Desenvolvimento de Sistemas II
+## Equipe 
+Anna Alicia Vasconcelos Milani
+José Jordan de Giordano Alcantra
+Vanessa de Souza Câmara
+
 # Truffle Box for React using Hooks
 
 This Truffle Box is a base for working with the Truffle framework and React. 
